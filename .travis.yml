@@ -7,9 +7,6 @@ services:
 # Install latest Docker CE so we can use Dockerfile outside build context
 addons:
   chrome: stable
-  apt:
-    packages:
-      - docker-ce
  
 # Install any dependencies, update Docker Compose to 1.23.2 so we can use Dockerfile outside build context
 before_install:
