@@ -21,7 +21,7 @@ before_script:
   - docker build ./todo-view -f ./todo-view/Dockerfile.dev -t moccogov/todo-view-test
   - docker build ./todo-cache-service -f Dockerfile.nodejs.dev -t moccogov/todo-cache-service-test
   - env | grep CHROME_BIN
-  - CHROME_BIN=/usr/bin/google-chrome
+  - CHROME_BIN=/usr/bin/google-chrome-stable
  
 # Run some tests
 script:
