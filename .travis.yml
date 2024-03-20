@@ -12,16 +12,15 @@ addons:
 before_install:
  - docker --version
  - docker-compose --version
- - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
  
 #install:
  
 # Build development images for test
 before_script:
+  - CHROME_BIN=/usr/bin/google-chrome-stable
+  - env | grep CHROME_BIN
   - docker build ./todo-view -f ./todo-view/Dockerfile.dev -t moccogov/todo-view-test
   - docker build ./todo-cache-service -f Dockerfile.nodejs.dev -t moccogov/todo-cache-service-test
-  - env | grep CHROME_BIN
-  - CHROME_BIN=/usr/bin/google-chrome-stable
  
 # Run some tests
 script:
