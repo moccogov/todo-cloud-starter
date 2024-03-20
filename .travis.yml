@@ -20,6 +20,7 @@ before_install:
 before_script:
   - docker build ./todo-view -f ./todo-view/Dockerfile.dev -t moccogov/todo-view-test
   - docker build ./todo-cache-service -f Dockerfile.nodejs.dev -t moccogov/todo-cache-service-test
+  - export CHROME_BIN='/usr/bin/chromium'
  
 # Run some tests
 script:
